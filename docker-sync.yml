@@ -1,0 +1,6 @@
+version: "2"
+
+syncs:
+  ml_hack:
+    src: './'
+    sync_excludes: ['node_modules', 'vendor/bundle','*.log','.docker-sync']
