@@ -1,7 +1,10 @@
 class ImageFilesController < ApplicationController
   # https://cre8cre8.com/rails/upload-image.htm
   def create
-    uploaded_file = fileupload_param[:file]
+    if params[:fileupload].nil?
+      return redirect_to '/', danger: '画像を選択してください'
+    end
+    uploaded_file = params[:fileupload][:file]
     filename = uploaded_file.original_filename
     output_path = Rails.root.join('public/img', filename)
 
@@ -26,12 +29,6 @@ class ImageFilesController < ApplicationController
 
   def index
     @re = 'TEST'
-  end
-
-
-  private
-  def fileupload_param
-    params.require(:fileupload).permit(:file)
   end
 
 end
