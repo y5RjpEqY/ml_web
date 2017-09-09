@@ -18,21 +18,18 @@ class StaticPagesController < ApplicationController
     cmd = 'pwd'
     res = `#{cmd}`
     case res
-      when 0 then
+      when '0' then
         redirect_to '/0'
-      when 1 then
-        # redirect_to :action => 'index'
-      when 2 then
-        # redirect_to :action => 'index'
+      when '1' then
+        redirect_to '/1'
+      when '2' then
+        redirect_to '/2'
       else
-        # redirect_to '/0'
+        redirect_to '/0'
     end
   end
 
   def show
     @id = params[:id]
   end
-
-
-
 end
