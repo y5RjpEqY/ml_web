@@ -1,4 +1,5 @@
 .well
+  p あなたは...
   - case @id
   - when '0'
     = render 'uec'
@@ -10,16 +11,14 @@
     = render 'aogaku'
     - str = '青学生って判定されたよ'
 
-.sharebtn
-  p.result 判定結果をシェアする
-  a href="https://twitter.com/share" class="twitter-share-button" data-url="http://testURL" data-text= str data-size="large" data-hashtags="hashTag"
-  script !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+.sharebtn.pull-right
+  p.result シェアする
+  .pull-right
+    a href="https://twitter.com/share" class="twitter-share-button" data-url="http://example.com" data-text= str data-size="large" data-hashtags="student_checker"
+    script !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 
 css:
-  .sharebtn {
-    margin-left: 10px;
-  }
-
   .result {
     font-size: 1.3em;
+    margin-top: 20px;
   }

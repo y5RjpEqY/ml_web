@@ -25,7 +25,7 @@ class StaticPagesController < ApplicationController
       when '2' then
         redirect_to '/2'
       else
-        redirect_to '/0'
+        redirect_to '/', warning: 'Something Wrong'
     end
   end
 
